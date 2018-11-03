@@ -6,7 +6,7 @@
 <?php
 try{
 
-$stmt = $conn->query('SELECT * FROM `product` where `product_id` ='. $_post['id']);
+$stmt = $conn->query('SELECT * FROM `product` where `product_id` ='. $_GET['id']);
 ?>
 
 
