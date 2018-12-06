@@ -2,7 +2,7 @@
 
 <?php
 try{
-  $query = "INSERT INTO `product` (name, price, stock, category_id) VALUES(:nick, :pay, :stk, :cat)";
+  $query = "INSERT INTO `product` (name, price, stock, category_id, description) VALUES(:nick, :pay, :stk, :cat, :des)";
 
   $stmt = $conn->prepare($query);
 
@@ -10,6 +10,7 @@ try{
   $stmt->bindValue('pay', $_POST['pric'] );
   $stmt->bindValue('stk', $_POST['stoc'] );
   $stmt->bindValue('cat', $_POST['category'] );
+  $stmt->bindValue('des', $_POST['desc'] );
 
   //print_r($_GET);
   $stmt->execute();

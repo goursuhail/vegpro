@@ -65,12 +65,12 @@
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                     <li class="nav-item tr-dropdown">
-                        <a class="nav-link" href="#">Pages</a>
+                        <a class="nav-link" href="#">Categories</a>
                         <ul class="tr-dropdown-menu">
-                            <li class="nav-item"><a class="nav-link" href="shop-details.html">Shop Details</a></li>
-                            <li class="nav-item"><a class="nav-link" href="blog-details.html">Blog Details</a></li>
-                            <li class="nav-item"><a class="nav-link" href="signup.html">Signup</a></li>
-                            <li class="nav-item"><a class="nav-link" href="signin.html">Signin</a></li>
+                            <li class="nav-item"><a class="nav-link" href="category.php?id=1">Vegetable</a></li>
+                            <li class="nav-item"><a class="nav-link" href="category.php?id=2">Dairy</a></li>
+                            <li class="nav-item"><a class="nav-link" href="category.php?id=3">Bakery</a></li>
+                            <li class="nav-item"><a class="nav-link" href="category.php?id=4">Fruit</a></li>
                         </ul>
                     </li>
                 </ul>

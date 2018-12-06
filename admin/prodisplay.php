@@ -28,6 +28,7 @@ try{
       <th scope="col">Price</th>
       <th scope="col">Category Id</th>
       <th scope="col">Stock</th>
+      <th scope="col">description</th>
       <th scope="col">Operation</th>
 
 
@@ -46,6 +47,7 @@ try{
   <td><?php echo $row['price']; ?></td>
   <td><?php echo $row['category_id']; ?></td>
   <td><?php echo $row['stock']; ?></td>
+  <td><?php echo $row['description']; ?></td>
   <td><a href="proedit.php?edit=<?php echo $row['product_id']; ?>">Edit</a></td>
   <td><a href="prodelete.php?id=<?php echo $row['product_id']; ?>">Delete</a></td>
 

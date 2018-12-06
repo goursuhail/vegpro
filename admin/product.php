@@ -54,7 +54,14 @@ if(!isset($_SESSION['user'])){
             </div>
           </div>
           </div>
-        
+          <div class="row">
+            <div class="col col-md-6">
+            <div class="form-group">
+              <label for="des">description</label>
+              <input type="text" class="form-control" id="des" name="desc" />
+            </div>
+          </div>
+          </div>
           <div class="row">
             <div class="col col-md-6">
             <div class="form-group">
