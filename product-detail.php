@@ -40,15 +40,14 @@ $stmt = $conn->query('SELECT * FROM `product` where `product_id` ='. $_GET['id']
   </div>
   </div>
   </div>
-  <div class="row">
-    <div class="form-group">
-  <label for="des">Description:</label>
-    <textarea rows="4" cols="50" id="des">
+  <div class="row col-md-3">
+    <label>Description:</label>
+    <div class="descri">
+    <div>
       <?php echo $row['description']; ?>
-  </textarea>
-  </div>
+   </div>
+ </div>
 </div>
-
 
 
 
