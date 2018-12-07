@@ -4,7 +4,7 @@
 <?php
 try{
 
-$stmt = $conn->query('SELECT * FROM `product` where `product_id` ='. $_GET['id']);
+$stmt = $conn->query('SELECT * FROM `product` where `product_id` ='.$_GET['id']);
 ?>
 
 
@@ -20,24 +20,19 @@ $stmt = $conn->query('SELECT * FROM `product` where `product_id` ='. $_GET['id']
   </div>
   <div class="col-md-5">
     <span class="product-title"><strong><?php echo $row['name']; ?></strong></span>
-    <br/>
-    <div class="col-md-3">
-    <label for="qty">Quantity:-</label>
-    <input type="number" class="form-control" id="qty" >
-  </div>
-  <br/>
-  <div>
-      <label>Sizes</label>
-    <select name="vegetable">
-      <option>250gm</option>
-      <option>500gm</option>
-      <option>1kg</option>
-    </select>
-  </div>
-  <br/>
-  <div>
-    <button type="button" class="btn btn-primary">Add to cart</button>
-  </div>
+
+    <form action="add-cart.php" method="post">
+      <div class="col-md-3">
+        <label for="qty">Quantity:-</label>
+        <input type="number" name="qty" class="form-control" id="qty">
+      </div>
+
+      <div class="add-to-cart-wrapper">
+        <button type="submit" class="btn btn-primary">Add to cart</button>
+      </div>
+      <input type="hidden" name="pid" value="<?php echo $row['product_id'];  ?>" />
+    </form>
+
   </div>
   </div>
   <div class="row col-md-3">
@@ -48,18 +43,12 @@ $stmt = $conn->query('SELECT * FROM `product` where `product_id` ='. $_GET['id']
    </div>
  </div>
 </div>
-
-
-
-
-
-
-
-
+</div>
 <?php
 }
 ?>
 <?php
+
 }catch(PDOException $e){
 
 

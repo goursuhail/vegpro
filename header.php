@@ -90,33 +90,30 @@
                             </div><!-- /s form -->
                         </li>
                         <li class="cart-content tr-dropdown">
-                            <a href="#"><span class="icon icon-shopping-basket"></span> <span class="cart-number">3</span></a>
+                            <a href="#"><span class="icon icon-shopping-basket"></span> <span class="cart-number"><?php echo count($_SESSION['cart']); ?></span></a>
                             <div class="tr-dropdown-menu">
                                 <ul class="global-list">
-                                    <li class="remove-item">
-                                        <span class="remove-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
-                                        <div class="product">
-                                            <a href="details.html">
-                                                <span class="product-image">
-                                                    <img src="images/product/1.jpg" alt="Image" class="img-fluid">
-                                                </span>
-                                                <span class="product-title">Organic <strong>Cabbage</strong></span>
-                                                <span class="price"><del>$15.00</del>$12.00</span>
-                                            </a>
-                                        </div><!-- /.product -->
-                                    </li>
-                                    <li class="remove-item">
-                                        <span class="remove-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
-                                        <div class="product">
-                                            <a href="details.html">
-                                                <span class="product-image">
-                                                    <img src="images/product/1.jpg" alt="Image" class="img-fluid">
-                                                </span>
-                                                <span class="product-title">Organic <strong>Cabbage</strong></span>
-                                                <span class="price"><del>$15.00</del>$12.00</span>
-                                            </a>
-                                        </div><!-- /.product -->
-                                    </li>
+
+                                    <?php
+
+                                        foreach ($cart_products as $key => $cp) {
+                                          ?>
+                                          <li class="remove-item">
+                                              <span class="remove-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                              <div class="product">
+                                                  <a href="details.html">
+                                                      <span class="product-image">
+                                                          <img src="assests/<?php echo $cp['image']; ?>" alt="Image" class="img-fluid">
+                                                      </span>
+                                                      <span class="product-title"><?php echo $cp['name']; ?></span>
+                                                      <span class="price"><?php echo $cp['price']; ?></span>
+                                                  </a>
+                                              </div><!-- /.product -->
+                                          </li>
+                                          <?php
+                                        }
+                                    ?>
+
                                 </ul>
                                 <div class="total-price">
                                     <span><strong>Total Price: </strong>$598:00</span>
