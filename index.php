@@ -1,5 +1,6 @@
-<?php require_once('header.php'); ?>
 <?php require_once('db.php'); ?>
+<?php require_once('header.php'); ?>
+
 
 
 <div id="home-carousel" class="carousel slide home-slider tr-banner" data-ride="carousel" style="background-image: url(assests/img/background.jpg);">

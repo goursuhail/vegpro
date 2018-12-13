@@ -91,15 +91,18 @@
                         </li>
                         <li class="cart-content tr-dropdown">
                             <a href="#"><span class="icon icon-shopping-basket"></span> <span class="cart-number"><?php echo count($_SESSION['cart']); ?></span></a>
+                            <?php if(count($cart_products) != 0){ ?>
                             <div class="tr-dropdown-menu">
                                 <ul class="global-list">
 
                                     <?php
+                                    $total=0;
 
                                         foreach ($cart_products as $key => $cp) {
+                                          $total+=$cp['price'];
                                           ?>
                                           <li class="remove-item">
-                                              <span class="remove-icon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                              <a href="cart-remove.php?id=<?php echo $key; ?>"><span class="remove-icon"><i class="fa fa-times" aria-hidden="true"></i></span></a>
                                               <div class="product">
                                                   <a href="details.html">
                                                       <span class="product-image">
@@ -116,13 +119,14 @@
 
                                 </ul>
                                 <div class="total-price">
-                                    <span><strong>Total Price: </strong>$598:00</span>
+                                    <span><strong>Total Price: </strong><?php echo $total; ?></span>
                                 </div>
                                 <div class="buttons">
-                                    <a class="btn btn-primary cart-button" href="shopping-cart.html">View Cart</a>
-                                    <a class="btn btn-primary" href="#">Checkout</a>
+                                    <a class="btn btn-primary cart-button" href="cart.php">View Cart</a>
+                                    <a class="btn btn-primary" href="Checkout.php">Checkout</a>
                                 </div>
                             </div><!-- /.tr-dropdown-menu -->
+                          <?php } ?>
                         </li>
                     </ul>
                 </div><!-- /.find-option -->

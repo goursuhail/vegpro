@@ -2781,3 +2781,11 @@ footer widget (getnewsletter)
 
 
 .add-to-cart-wrapper{ margin-top:20px; }
+
+
+
+
+
+.buttons.cart-button {
+	text-align: right;
+}

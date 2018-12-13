@@ -1,5 +1,9 @@
-<?php require_once('header.php'); ?>
+
 <?php require_once('db.php'); ?>
+
+<?php require_once('header.php'); ?>
+
+
 
 <?php
 try{
