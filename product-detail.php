@@ -28,6 +28,15 @@ $stmt = $conn->query('SELECT * FROM `product` where `product_id` ='.$_GET['id'])
         <input type="number" name="qty" class="form-control" id="qty">
       </div>
 
+      <div class="col-md-3">
+        <div class="cost-price">
+        <div>
+            <label>Price:-</label>
+          <strong>$<?php echo $row['price']?></strong>
+        </div>
+      </div>
+      </div>
+
       <div class="add-to-cart-wrapper">
         <button type="submit" class="btn btn-primary">Add to cart</button>
       </div>

@@ -22,7 +22,7 @@ echo '</pre>';
     <th>Unit Price</th>
     <th>Quantity</th>
     <th>Price</th>
-    <th>Remove</th>
+    <th>Remove item</th>
 
 
   </tr>
@@ -42,7 +42,7 @@ echo '</pre>';
     <td><?php echo   $c_p['unit_price']; ?></td>
     <td><?php echo   $c_p['qty']; ?></td>
     <td><?php echo   $c_p['price']; ?></td>
-    <td><a href="cart-remove.php?id=<?php echo $key; ?>">remove item</a></td>
+    <td><a href="cart-remove.php?id=<?php echo $key; ?>"><strong>click here</strong></a></td>
 
 
 
