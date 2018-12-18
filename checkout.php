@@ -8,6 +8,15 @@
   </head>
 <body>
   <div class="container">
+    <div class="msg">
+      <?php
+
+        if(isset($_GET['msg']) && $_GET['msg'] == 'user_exist'){
+          echo 'User already exist with this email. Please login';
+        }
+
+      ?>
+    </div>
     <h1>Details</h1>
   <form action="order-process.php" method="post">
     <div class="row">
@@ -29,6 +38,14 @@
     <div class="row">
       <div class="col col-md-6">
         <div class="form-group">
+          <label for="Input">User name</label>
+          <input type="text" class="form-control"  name="usname" id="Input" placeholder="Enter User name">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-md-6">
+        <div class="form-group">
           <label for="Input1">Name</label>
           <input type="text" class="form-control" name="nam" id="Input1" placeholder="Enter Name">
         </div>
@@ -38,14 +55,7 @@
 
 
 
-    <div class="row">
-      <div class="col col-md-3">
-        <div class="form-group">
-          <label for="Input2">date</label>
-          <input type="text" class="form-control" name="date" id="Input2" placeholder="Enter Date">
-        </div>
-      </div>
-    </div>
+
     <div class="row">
       <div class="col col-md-6">
         <div class="form-group">
@@ -68,10 +78,11 @@
             <label>City</label>
       <select name="city">
         <option value="1">Ajmer</option>
-        <option value="1">Jaipur</option>
-        <option value="1">Jodhpur</option>
-        <option value="1">Delhi</option>
-        <option value="1">Mumbai</option>
+        <option value="2">Jaipur</option>
+        <option value="3">Jodhpur</option>
+        <option value="4">Rajasthan</option>
+        <option value="5">Delhi</option>
+        <option value="6">Mumbai</option>
       </select>
       </div>
     </div>
