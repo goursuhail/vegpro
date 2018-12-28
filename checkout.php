@@ -77,12 +77,12 @@
         <div class="form-group">
             <label>City</label>
       <select name="city">
-        <option value="1">Ajmer</option>
-        <option value="2">Jaipur</option>
-        <option value="3">Jodhpur</option>
-        <option value="4">Rajasthan</option>
-        <option value="5">Delhi</option>
-        <option value="6">Mumbai</option>
+        <option>Ajmer</option>
+        <option>Jaipur</option>
+        <option>Jodhpur</option>
+        <option>Rajasthan</option>
+        <option>Delhi</option>
+        <option>Mumbai</option>
       </select>
       </div>
     </div>

@@ -16,7 +16,8 @@
 <?php
 try{
 
-    $stmt = $conn->query('SELECT * FROM orders');
+    $query = "SELECT * FROM `orders` JOIN `customer` ON `orders`.`customer_id` = `customer`.customer_id";
+    $stmt = $conn->query($query);
 ?>
 
 
@@ -51,7 +52,7 @@ try{
   <td><?php echo $row['billing_charges']; ?></td>
   <td><?php echo $row['shipping_charges']; ?></td>
   <td><?php echo $row['phone']; ?></td>
-  <td><?php echo $row['customer_name']; ?></td>
+  <td><?php echo $row['first_name']; ?></td>
 
 
   <td><a href="ordview.php?view=<?php echo $row['order_id']; ?>">View</a></td>

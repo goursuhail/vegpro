@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('db.php');
 
 try{
@@ -14,13 +14,13 @@ try{
 
 
     if(is_array($customer)){
-     //header('Location:checkout.php?msg=user_exist');
-     //die();
+     header('Location:checkout.php?msg=user_exist');
+     die();
    }
 
 
 
-   $query = "INSERT INTO `customer`(`user_name`, `email`, `first_name`, `password`) values(:uname, :mail, :name, :pass)";
+   $query = "INSERT INTO `customer`(`user_name`, `email`, `first_name`, `password`, `phone`) values(:uname, :mail, :name, :pass, :phne)";
 
     $stmt = $conn->prepare($query);
 
@@ -30,8 +30,9 @@ try{
     $stmt->bindValue('mail', $_POST['email'] );
     $stmt->bindValue('name', $_POST['nam'] );
     $stmt->bindValue('pass', $_POST['passwd'] );
+    $stmt->bindValue('phne', $_POST['mobile'] );
 
-    print_r($_POST);
+    //print_r($_POST);
 
     $stmt->execute();
 
@@ -39,11 +40,11 @@ try{
 
     $customer_id = $conn->lastInsertId();
 
-    $query = "INSERT INTO `order`(`status`,`billing_charges`, `shipping_charges`, `customer_id`,`address`, `state`, `pin_code`) values(:sta, :bill, :ship, :custom, :add, :states, :pinco)";
+    $query = "INSERT INTO `orders`(`status`,`billing_charges`, `shipping_charges`, `customer_id`,`address`, `state`, `pin_code`) values(:sta, :bill, :ship, :custom, :add, :states, :pinco)";
 
    $stmt = $conn->prepare($query);
 
-   echo($query);
+   //echo($query);
 
    $total=0;
 
@@ -54,24 +55,26 @@ try{
 
    $stmt->bindValue('sta', '1');
    $stmt->bindValue('bill', $total );
-   $stmt->bindValue('ship', '20' );
+   $stmt->bindValue('ship', 20.00 );
    $stmt->bindValue('states', $_POST['city'] );
    $stmt->bindValue('custom', $customer_id );
    $stmt->bindValue('add', $_POST['addr'] );
    $stmt->bindValue('pinco', $_POST['pinc'] );
 
-   echo '<pre>'; print_r($_POST); echo '</pre>';
+
   // print_r($customer_id);
   // print_r($total);
    $stmt->execute();
 
 
 
+
+
       $order_id = $conn->lastInsertId();
-      echo $order_id; die();
+      //echo $order_id;
 
 
-            foreach ($cart_products as $key => $oli) {
+      foreach ($cart_products as $key => $oli) {
 
       $query = "INSERT INTO `order_line_items`(`order_id`, `product_id`, `qty`, `unit_price`) values(:ord, :proid, :quantity, :unipri)";
 
@@ -83,10 +86,19 @@ try{
       $stmt->bindValue('unipri', $oli['unit_price'] );
 
       $stmt->execute();
-      print_r($oli);
-      print_r($key);
-      print_r($order_id);
+      //print_r($oli);
+      //print_r($key);
+      //print_r($order_id);
+
+
+
+
       }
+
+      // remove products from CART
+      unset($_SESSION['cart']);
+      header('Location: thankyou.php?order_id='.$order_id);
+      die();
 
 }catch(PDOException $e){
   echo 'Error Occured';

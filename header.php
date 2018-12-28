@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -32,7 +35,19 @@
                <div class="float-right">
                    <div class="user-option">
                        <span class="icon icon-avatar"></span>
-                       <a href="signin.html">Login</a>  /  <a href="signup.html">Signup</a>
+                       <?php
+                         if(isset($_SESSION['user-front'])){
+                           ?>
+                           <a href="logout-front.php">Logout</a>
+                           <?php
+                         }else{
+                           ?>
+                           <a href="login-front.php">Login</a>  /  <a href="signup.html">Signup</a>
+                           <?php
+                         }
+                       ?>
+
+
                    </div>
                </div>
            </div>

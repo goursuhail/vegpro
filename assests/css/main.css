@@ -2793,3 +2793,17 @@ footer widget (getnewsletter)
 .buttons.cart-button {
 	text-align: right;
 }
+
+/**
+.row2 {
+	margin-top: 20px;
+}
+
+.row2 .col1 {
+	float: left;
+}
+
+.row2 .col2 {
+	float: right;
+}
+**/
