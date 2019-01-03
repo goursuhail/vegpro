@@ -2794,6 +2794,11 @@ footer widget (getnewsletter)
 	text-align: right;
 }
 
+
+.btn.btn-primary{
+	margin-top: 20px;
+}
+
 /**
 .row2 {
 	margin-top: 20px;
@@ -2807,3 +2812,8 @@ footer widget (getnewsletter)
 	float: right;
 }
 **/
+.login-process {
+	align-items: center;
+	width: 400px;
+	margin: auto;
+}

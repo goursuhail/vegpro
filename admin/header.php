@@ -34,7 +34,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="dashboard.php">
+                <a class="nav-link active" href="index.php">
                   <span data-feather="home"></span>
                   Dashboard <span class="sr-only">(current)</span>
                 </a>
@@ -78,6 +78,12 @@
                 <a class="nav-link" href="orddisplay.php">
                   <span data-feather="file-text"></span>
                   Orders
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact-file-admin.php">
+                  <span data-feather="file-text"></span>
+                  Contact request
                 </a>
               </li>
 

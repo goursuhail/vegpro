@@ -31,28 +31,29 @@
            <div class="topbar-content">
                <div class="float-left">
                    <span><span class="icon icon-phone-call"></span> Call us <span class="number">+91-8696893650</span></span>
+                 </div>
+                   <div class="float-right">
+                       <div class="user-option">
+                   <span class="icon icon-avatar"></span>
+                   <?php
+                   if(isset($_SESSION['user-front'])){
+                     ?>
+                     <a href="logout-front.php">Logout</a>
+                     <?php
+                   }else{
+                     ?>
+                     <a href="login-front.php">Login</a>  /  <a href="signup.html">Signup</a>
+                     <?php
+                   }
+                   ?>
+                 </div>
                </div>
-               <div class="float-right">
-                   <div class="user-option">
-                       <span class="icon icon-avatar"></span>
-                       <?php
-                         if(isset($_SESSION['user-front'])){
-                           ?>
-                           <a href="logout-front.php">Logout</a>
-                           <?php
-                         }else{
-                           ?>
-                           <a href="login-front.php">Login</a>  /  <a href="signup.html">Signup</a>
-                           <?php
-                         }
-                       ?>
+             </div>
+           </div><!-- /.container -->
+        </div><!-- /.tr-topbar -->
 
 
-                   </div>
-               </div>
-           </div>
-       </div><!-- /.container -->
-   </div><!-- /.tr-topbar -->
+
 
 
 <div class="tr-menu">
@@ -78,7 +79,7 @@
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing Table</a></li>
                     <li class="tr-middle-logo"><a class="navbar-brand" href="index.html"><img class="img-fluid" src="assests/img/logo.png" alt="Logo"></a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
                     <li class="nav-item tr-dropdown">
                         <a class="nav-link" href="#">Categories</a>
                         <ul class="tr-dropdown-menu">
