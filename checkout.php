@@ -12,13 +12,15 @@
       <?php
 
         if(isset($_GET['msg']) && $_GET['msg'] == 'user_exist'){
-          echo 'User already exist with this email. Please login';
+          echo 'User already exist with this email. Please <a href="login-front.php">login</a>';
         }
 
       ?>
     </div>
     <h1>Details</h1>
   <form action="order-process.php" method="post">
+
+    <?php if(! isset($_SESSION['user-front'])){  ?>
     <div class="row">
       <div class="col col-md-6">
         <div class="form-group">
@@ -64,6 +66,10 @@
         </div>
       </div>
     </div>
+
+    <?php } ?>
+
+
     <div class="row">
       <div class="col col-md-6">
         <div class="form-group">

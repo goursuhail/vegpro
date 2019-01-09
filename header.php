@@ -42,7 +42,7 @@
                      <?php
                    }else{
                      ?>
-                     <a href="login-front.php">Login</a>  /  <a href="signup.html">Signup</a>
+                     <a href="login-front.php">Login</a>  /  <a href="sign-up.php">Signup</a>
                      <?php
                    }
                    ?>

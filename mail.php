@@ -11,6 +11,7 @@ require 'phpmailer/phpmailer/src/SMTP.php';
 function mail_send($to, $subject, $body){
 
 
+
 $mail = new PHPMailer;
 
 
@@ -18,7 +19,7 @@ $mail = new PHPMailer;
 
 try {
     //Server settings
-    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -28,8 +29,8 @@ try {
     $mail->Port = 465;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('webtechanand@gmail.com', 'Suhail');
-    $mail->addAddress($to, 'Joe User');     // Add a recipient
+    $mail->setFrom('suhailgour143@gmail.com', 'Vegpro');
+    $mail->addAddress($to, 'bhaijaan');     // Add a recipient
     //$mail->addAddress('ellen@example.com');               // Name is optional
     $mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
@@ -46,13 +47,13 @@ try {
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Message has been sent';
+    //echo 'Message has been sent';
 } catch (Exception $e) {
-    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    //echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
 
 }
 
 
 
-mail_send('anand.au14@gmail.com', 'Hi Hello', 'Kya haal...');
+//mail_send('suhailgour143@gmail.com', 'Hi Hello', 'Kya kar rha hai bhai');

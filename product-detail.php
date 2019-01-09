@@ -25,7 +25,7 @@ $stmt = $conn->query('SELECT * FROM `product` where `product_id` ='.$_GET['id'])
     <form action="add-cart.php" method="post">
       <div class="col-md-3">
         <label for="qty">Quantity:-</label>
-        <input type="number" name="qty" class="form-control" id="qty">
+        <input type="number" min="1" max="100" name="qty" class="form-control" id="qty">
       </div>
 
       <div class="col-md-3">

@@ -2817,3 +2817,9 @@ footer widget (getnewsletter)
 	width: 400px;
 	margin: auto;
 }
+
+.signup-process {
+	align-items: center;
+	width:400px;
+	margin: auto;
+}
