@@ -15,7 +15,7 @@ function mail_send($to, $subject, $body){
 $mail = new PHPMailer;
 
 
-//print_r($phpmailer);
+print_r($phpmailer);
 
 try {
     //Server settings

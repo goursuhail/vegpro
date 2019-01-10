@@ -10,8 +10,8 @@
                 <div class="middle-content">
                     <div class="container">
                         <div class="banner-info">
-                            <h1 data-animation="animated pulse">Welcome To Biotic</h1>
-                            <h2 data-animation="animated pulse">Fresh Organic Food</h2>
+                            <h1 data-animation="animated pulse">Welcome To Vegpro</h1>
+                            <h2 data-animation="animated pulse">Fresh Organic Vegetable & Fruits</h2>
                             <p  data-animation="animated pulse">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             <a href="#"   data-animation="animated fadeInDown" class="btn btn-primary">View More</a>
                         </div>
@@ -24,8 +24,8 @@
                     <div class="middle-content">
                         <div class="container">
                             <div class="banner-info">
-                                <h1 data-animation="animated pulse">Welcome To Biotic</h1>
-                                <h2 data-animation="animated pulse">Fresh Organic Food</h2>
+                                <h1 data-animation="animated pulse">Welcome To Vegpro</h1>
+                                <h2 data-animation="animated pulse">Fresh Organic Vegetable & Fruits</h2>
                                 <p  data-animation="animated pulse">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                 <a href="#"   data-animation="animated fadeInDown" class="btn btn-primary">View More</a>
                             </div>
@@ -39,8 +39,8 @@
                   <div class="middle-content">
                       <div class="container">
                           <div class="banner-info">
-                              <h1 data-animation="animated fadeInUp">Welcome To Biotic</h1>
-                              <h2 data-animation="animated fadeInUp">Fresh Organic Food</h2>
+                              <h1 data-animation="animated fadeInUp">Welcome To Vegpro</h1>
+                              <h2 data-animation="animated fadeInUp">Fresh Organic Vegetable & Fruits</h2>
                               <p  data-animation="animated fadeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                               <a href="#"   data-animation="animated fadeInUp" class="btn btn-primary">View More</a>
                           </div>
