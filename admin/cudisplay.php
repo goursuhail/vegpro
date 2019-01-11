@@ -9,7 +9,30 @@
 <?php
 try{
 
-    $stmt = $conn->query('SELECT * FROM customer');
+    $per_page = 10;
+    $curr_page = 1;
+
+    if(isset($_GET['page'])){
+      $curr_page = $_GET['page'];
+    }
+
+    $limit_start = ($curr_page - 1) * $per_page;
+
+    $limit = ' limit '.$limit_start.', '.$per_page;
+    $query = 'SELECT * FROM customer';
+
+    // run query to get total data
+    $stmt = $conn->query($query);
+
+    $total = $stmt->rowCount();
+
+    $pages = $total/$per_page;
+
+    if($total % $per_page > 0){
+      $pages++;
+    }
+   // Run actual query
+    $stmt = $conn->query($query.' '.$limit)
 ?>
 
 
@@ -51,6 +74,24 @@ try{
 ?>
 </tbody>
   </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <?php
+        for($i = 1; $i <= $pages; $i++){
+
+          $active = '';
+          if($i == $curr_page){
+            $active = 'active';
+          }
+          ?>
+            <li class="page-item <?php echo $active; ?>">
+              <a class="page-link" href="http://localhost/vegpro/admin/cudisplay.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+            </li>
+          <?php
+        }
+      ?>
+    </ul>
+  </nav>
   <?php
 }catch(PDOException $e){
 
