@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  //session_start();
 ?>
 <html lang="en">
 <head>
@@ -106,7 +106,15 @@
                             </div><!-- /s form -->
                         </li>
                         <li class="cart-content tr-dropdown">
-                            <a href="#"><span class="icon icon-shopping-basket"></span> <span class="cart-number"><?php echo count($_SESSION['cart']); ?></span></a>
+                            <a href="#"><span class="icon icon-shopping-basket"></span> <span class="cart-number">
+                                  <?php
+                                    if(isset($_SESSION['cart']) && count($_SESSION['cart'])){
+                                      echo count($_SESSION['cart']);
+                                    }else{
+                                      echo 0;
+                                    }
+                                  ?>
+                            </span></a>
                             <?php if(count($cart_products) != 0){ ?>
                             <div class="tr-dropdown-menu">
                                 <ul class="global-list">
