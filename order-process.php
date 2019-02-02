@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require_once('db.php');
 require_once('mail.php');
 
@@ -56,7 +56,7 @@ try{
 
     $query = "INSERT INTO `orders`(`status`,`billing_charges`, `shipping_charges`, `customer_id`,`address`, `state`, `pin_code`) values(:sta, :bill, :ship, :custom, :add, :states, :pinco)";
 
-   $stmt = $conn->prepare($query);
+    $stmt = $conn->prepare($query);
 
    //echo($query);
 
@@ -80,12 +80,8 @@ try{
   // print_r($total);
    $stmt->execute();
 
-
-
-
-
-      $order_id = $conn->lastInsertId();
-      //echo $order_id;
+   $order_id = $conn->lastInsertId();
+   //echo $order_id;
 
 
       foreach ($cart_products as $key => $oli) {
@@ -100,21 +96,12 @@ try{
       $stmt->bindValue('unipri', $oli['unit_price'] );
 
       $stmt->execute();
-      ?>
-      //print_r($oli);
-      //print_r($key);
-      //print_r($order_id);
-
-
-
-
-
-      <?php
+      }
 
       ob_start();
       ?>
       <h1>A new order has been received</h1>
-      <table cellspacing="3" border="1px solid black" style='border-collapse="collapse";'>
+      <table cellspacing="3" border="1px solid black" style="border-collapse: collapse;">
 
 
         <tr>
@@ -124,14 +111,22 @@ try{
           <th>Unit Price</th>
           <th>Total price</th>
         </tr>
-      <tr>
 
-       <td><?php echo $order_id; ?></td>
-         <td><?php echo $_POST['nam']; ?></td>
-           <td><?php echo $oli['qty']; ?></td>
-          <td><?php echo $oli['unit_price']; ?></td>
-           <td><?php echo $total; ?></td>
-      </tr>
+
+        <?php
+
+        foreach ($cart_products as $key => $oli) {
+        ?>
+            <tr>
+              <td><?php echo $order_id; ?></td>
+              <td><?php echo $_POST['nam']; ?></td>
+              <td><?php echo $oli['qty']; ?></td>
+              <td><?php echo $oli['unit_price']; ?></td>
+              <td><?php echo $total; ?></td>
+            </tr>
+       <?php
+       }
+       ?>
       </table>
 
       <?php
@@ -139,30 +134,16 @@ try{
       $mail_body = ob_get_contents();
       ob_end_clean();
 
-      ?>
-
-
-
-      <?php
       //$mail_body = "<h1>A new order has been received <br> Order ID ".$order_id." <br> Name $_POST['nam']; <br> Quantity ".$oli['qty']."; <br> Unit Price ".$oli['unit_price'].";  <br> Total Price ".$total."</h1>";
       $subject = "customer order has been recieved";
       mail_send('suhailgour143@gmail.com', $subject, $mail_body);
-
-
-
-      }
-
-
-
-
-
 
       // remove products from CART
       unset($_SESSION['cart']);
       header('Location: thankyou.php?order_id='.$order_id);
       die();
 
-}catch(PDOException $e){
+ } catch(PDOException $e){
   echo 'Error Occured';
 }
 

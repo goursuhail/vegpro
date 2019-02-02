@@ -4,6 +4,25 @@
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Customer list</h1>
 
+
+    <div class="container">
+    <form class="form-inline">
+
+    <div class="form-group mb-2">
+    <select name="search">
+      <option>Id</option>
+      <option>First Name</option>
+    </select>
+  </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="inputPassword2" class="sr-only">search</label>
+    <input type="text" class="form-control" name="search-field" id="inputPassword2" placeholder="search....">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Search</button>
+</form>
+</div>
+
   </div>
 
 <?php

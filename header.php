@@ -68,17 +68,17 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav hidden-md-down">
                     <li class="nav-item tr-dropdown active">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                         <ul class="tr-dropdown-menu dropdown-left">
-                            <li class="nav-item active"><a class="nav-link" href="index.html">Home V-1</a></li>
-                            <li class="nav-item"><a class="nav-link" href="index1.html">Home V-2</a></li>
-                            <li class="nav-item"><a class="nav-link" href="index2.html">Home V-3</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="index.php">Home V-1</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index1.php">Home V-2</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index2.php">Home V-3</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="shop-list.html">Store</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing Table</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pricing Table</a></li>
                     <li class="tr-middle-logo"><a class="navbar-brand" href="index.html"><img class="img-fluid" src="assests/img/logo.png" alt="Logo"></a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
                     <li class="nav-item tr-dropdown">
                         <a class="nav-link" href="#">Categories</a>

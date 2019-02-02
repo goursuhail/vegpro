@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+//session_start();
 
 require_once('db.php');
 require_once('header.php');
