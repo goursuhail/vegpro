@@ -13,6 +13,9 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
 
+      <!-- main core CSS -->
+    <link href="assets/css/dash-main.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="assets/css/dashboard.css" rel="stylesheet">
   </head>
