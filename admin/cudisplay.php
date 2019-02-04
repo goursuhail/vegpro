@@ -9,15 +9,15 @@
     <form class="form-inline">
 
     <div class="form-group mb-2">
-    <select name="search">
-      <option>Id</option>
-      <option>First Name</option>
+    <select name="search_field">
+      <option value="customer_id">Id</option>
+      <option value="first_name">First Name</option>
     </select>
   </div>
 
   <div class="form-group mx-sm-3 mb-2">
     <label for="inputPassword2" class="sr-only">search</label>
-    <input type="text" class="form-control" name="search-field" id="inputPassword2" placeholder="search....">
+    <input type="text" class="form-control" name="search" id="inputPassword2" placeholder="search....">
   </div>
   <button type="submit" class="btn btn-primary mb-2">Search</button>
 </form>
@@ -28,8 +28,13 @@
 <?php
 try{
 
+  $search = '';
     $per_page = 10;
     $curr_page = 1;
+
+    if(isset($_GET['search']) && $_GET['search'] !=''){
+      $search = $_GET['search'];
+    }
 
     if(isset($_GET['page'])){
       $curr_page = $_GET['page'];
@@ -40,6 +45,11 @@ try{
     $limit = ' limit '.$limit_start.', '.$per_page;
     $query = 'SELECT * FROM customer';
 
+    if($search != ''){
+        $query = $query." WHERE ".$_GET['search_field']." = '".$search."'";
+    }
+
+    echo $query;
     // run query to get total data
     $stmt = $conn->query($query);
 
