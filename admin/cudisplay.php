@@ -49,7 +49,7 @@ try{
         $query = $query." WHERE ".$_GET['search_field']." = '".$search."'";
     }
 
-    echo $query;
+    //echo $query;
     // run query to get total data
     $stmt = $conn->query($query);
 
