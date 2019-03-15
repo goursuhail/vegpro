@@ -4,9 +4,11 @@
 try{
 
   $query = "INSERT INTO `customer`(`email`, `password`, `first_name`, `user_name`, `phone`) VALUES(:email, :pass, :name, :username, :phone)";
-  echo($query);
+  //echo($query);
   $stmt = $conn->prepare($query);
-  $pass = md5($_POST['passwd']);
+
+  $pass = md5($_POST['passwd']);   //encrypted
+
   $stmt->bindValue('email', $_POST['mail'] );
   $stmt->bindValue('pass', $pass );
   $stmt->bindValue('name', $_POST['nam'] );
