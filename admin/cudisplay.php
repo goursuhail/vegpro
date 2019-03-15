@@ -72,9 +72,13 @@ try{
     <tr>
       <th scope="col">Customer Id</th>
 
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
+      <th scope="col">Name</th>
+
       <th scope="col">Date</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col">Phone</th>
       <th scope="col">Operation</th>
 
 
@@ -89,10 +93,13 @@ try{
 
 <tr>
   <td><?php echo $row['customer_id']; ?></td>
-
   <td><?php echo $row['first_name']; ?></td>
-  <td><?php echo $row['last_name']; ?></td>
+
   <td><?php echo $row['date']; ?></td>
+  <td><?php echo $row['user_name']; ?></td>
+  <td><?php echo $row['email']; ?></td>
+  <td><?php echo $row['password']; ?></td>
+  <td><?php echo $row['phone']; ?></td>
   <td><a href="cuedit.php?edit=<?php echo $row['customer_id']; ?>">Edit</a></td>
 
 

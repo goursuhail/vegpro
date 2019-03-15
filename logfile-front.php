@@ -1,13 +1,17 @@
-<?php require_once('db.php'); ?>
 <?php
 session_start();
+require_once('db.php');
+
 try{
+
 
   $query = "SELECT * FROM `customer` WHERE user_name = :name and password = :my";
   $stmt = $conn->prepare($query);
-
+//print_r($_POST);
+  $pwd_md5 = md5($_POST['pass']);
+  //echo $pwd_md5; die();
   $stmt->bindValue('name', $_POST['uname'] );
-  $stmt->bindValue('my', $_POST['pass'] );
+  $stmt->bindValue('my', $pwd_md5 );
 
   $stmt->execute();
 

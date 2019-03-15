@@ -21,10 +21,8 @@
   <button type="submit" class="btn btn-primary mb-2">Search</button>
 </form>
 </div>
-
+<!-- add new  button -->
     <div class="btn-toolbar mb-2 mb-md-0">
-
-
      <div class="btn-group mr-2">
        <a  class="btn btn-sm btn-outline-secondary" href="adminu.php">Add New</a>
     </div>

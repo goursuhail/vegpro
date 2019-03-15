@@ -109,6 +109,7 @@ try{
           <th>Name</th>
           <th>Quantity</th>
           <th>Unit Price</th>
+          <th>Sub Total</th>
           <th>Total price</th>
         </tr>
 
@@ -116,12 +117,15 @@ try{
         <?php
 
         foreach ($cart_products as $key => $oli) {
+
+          $sub_total = $oli['qty'] * $oli['unit_price'];
         ?>
             <tr>
               <td><?php echo $order_id; ?></td>
               <td><?php echo $_POST['nam']; ?></td>
               <td><?php echo $oli['qty']; ?></td>
               <td><?php echo $oli['unit_price']; ?></td>
+              <td><?php echo $sub_total; ?></td>
               <td><?php echo $total; ?></td>
             </tr>
        <?php
