@@ -141,6 +141,10 @@ try{
       //$mail_body = "<h1>A new order has been received <br> Order ID ".$order_id." <br> Name $_POST['nam']; <br> Quantity ".$oli['qty']."; <br> Unit Price ".$oli['unit_price'].";  <br> Total Price ".$total."</h1>";
       $subject = "customer order has been recieved";
       mail_send('suhailgour143@gmail.com', $subject, $mail_body);
+      $customer_mess = "your order has been confirmed!";
+      mail_send('arshigaur2016@gmail.com', $customer_mess, $mail_body);
+
+
 
       // remove products from CART
       unset($_SESSION['cart']);
