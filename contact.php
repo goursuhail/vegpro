@@ -53,6 +53,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
     </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3050.4544817534365!2d74.63013491459802!3d26.47944698331609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be797c823afaf%3A0xd9fb5e93316c91d7!2sDorani+jethani+restaurant!5e1!3m2!1sen!2sin!4v1553777928346" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
   </body>
 </html>
 <?php require_once('footer.php'); ?>
